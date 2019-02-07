@@ -49,6 +49,6 @@ app.post('/', async (req, res) => {
 var port = process.env.PORT || 5000;
 
 // Start express server
-app.listen(port, function () {
+app.listen(port, 'localhost', function () {
     console.log("Server started");
 });
