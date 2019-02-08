@@ -32,6 +32,25 @@ See https://tradesatoshi.com/Home/Api for more information
 | getMarketSummaries| market (optional), count (optional)
 | getOrderBook      | market, type (optional), depth (optional)
 
+### Usage
+#### Example axios request:
+```
+    url: "https://tradesatoshiapi.olafur.io/",
+    method: "POST",
+    headers: {'X-Requested-With': 'XMLHttpRequest'},
+    data: {
+        apiKey: API_KEY,
+        secret: API_SECRET,
+        params: {
+            market : 'BTC_LTC',
+            type: 'buy',
+            amount: '1'
+            price: 0.188435
+        },
+        method: 'submitOrder'
+    },
+    responseType: 'json'
+```
 ### Live demo
 https://tradesatoshiapi.olafur.io/
 ### Running locally
