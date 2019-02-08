@@ -5,29 +5,34 @@ Example axios request:
     method: "POST",
     headers: {'X-Requested-With': 'XMLHttpRequest'},
     data: {
-        apiKey: obj.apiKey,
-        secret: obj.secret,
-        params: params,
-        method: method
+        apiKey: API_KEY,
+        secret: API_SECRET,
+        params: {
+            market : 'BTC_LTC',
+            type: 'buy',
+            amount: '1'
+            price: 0.188435
+        },
+        method: 'submitOrder'
     },
     responseType: 'json'
 
 Available private methods: 
-    GetBalance
-    GetBalances
-    GetTradeHistory 
-    GetOrder
-    GetOrders
-    SubmitOrder
-    Public methods
+    getBalance
+    getBalances
+    getTradeHistory 
+    getOrder
+    getOrders
+    submitOrder
 
 Available public methods:
-    GetCurrency
-    GetCurrencies
-    GetTicker
-    GetMarketSummary
-    GetMarketSummaries
-    GetOrderBook
+    getCurrency
+    getCurrencies
+    getTicker
+    getMarketHistory
+    getMarketSummary
+    getMarketSummaries
+    getOrderBook
 
-TradeSatoshi's API documentation    :   https://tradesatoshi.com/Home/Api/
-Source code                         :   https://github.com/ollijonsson/tradesatoshiapi/
+Source code and documentation       :   https://github.com/ollijonsson/tradesatoshiapi/
+TradeSatoshi's documentation        :   https://tradesatoshi.com/Home/Api/

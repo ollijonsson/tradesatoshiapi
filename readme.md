@@ -8,24 +8,30 @@ It's written as a middleware for client-side web applications to communicate wit
 See https://tradesatoshi.com/Home/Api for more information
 
 ## Currently supported methods
-Private methods
-```
-GetBalance
-GetBalances
-GetTradeHistory 
-GetOrder
-GetOrders
-SubmitOrder
-```
-Public methods
-```
-GetCurrency
-GetCurrencies
-GetTicker
-GetMarketSummary
-GetMarketSummaries
-GetOrderBook
-```
+
+### Private methods
+
+| method            |  params  
+| ----------------- | ------------- 
+| getBalance        | currency          
+| getBalances       | none              
+| getOrder          | orderId                   
+| getOrders         | market (optional), count (optional)
+| submitOrder       | market, type, amount, price
+| getTradeHistory   | market (optional), count (optional)
+
+### Public methods
+
+| method            |  params  
+| ----------------- | ------------- 
+| getCurrency       | symbol          
+| getCurrencies     | none              
+| getTicker         | market                   
+| getMarketHistory  | market, count (optional)
+| getMarketSummary  | market
+| getMarketSummaries| market (optional), count (optional)
+| getOrderBook      | market, type (optional), depth (optional)
+
 ### Live demo
 https://tradesatoshiapi.olafur.io/
 ### Running locally
