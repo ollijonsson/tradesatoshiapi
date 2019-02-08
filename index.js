@@ -2,6 +2,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
+var fs = require('fs');
 
 // Import modules
 const api = require('./src/api')();
@@ -13,7 +14,7 @@ var app = express();
 app.use(bodyParser.json());
 
 // Use Cross-Origin Resource Sharing
-app.use(cors());
+app.use(cors({credentials: true, origin: true}));
 
 // Set header options
 app.use(function (req, res, next) {
@@ -26,7 +27,19 @@ app.use(function (req, res, next) {
 // Base URL for TradeSatoshi API
 const baseURL = "https://tradesatoshi.com/api";
 
-// POST requests (application only accepts POST)
+let textFile = {};
+fs.readFile("src/help.txt", "utf8", function (err, data) {
+    if (err) throw err;
+    textFile['text'] = data;
+});
+
+// GETrequests, show help text
+app.get('/', async (req, res) => {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end(textFile['text']);
+});
+
+// POST requests
 app.post('/', async (req, res) => {
     
     // Set options

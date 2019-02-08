@@ -26,6 +26,8 @@ GetMarketSummary
 GetMarketSummaries
 GetOrderBook
 ```
+### Live demo
+https://tradesatoshiapi.olafur.io/
 ### Running locally
 ```
 npm install

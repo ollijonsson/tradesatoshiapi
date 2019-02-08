@@ -1,0 +1,33 @@
+This API enables making requests to TradeSatoshi from client-side code.
+
+Example axios request:
+    url: "https://tradesatoshiapi.olafur.io/",
+    method: "POST",
+    headers: {'X-Requested-With': 'XMLHttpRequest'},
+    data: {
+        apiKey: obj.apiKey,
+        secret: obj.secret,
+        params: params,
+        method: method
+    },
+    responseType: 'json'
+
+Available private methods: 
+    GetBalance
+    GetBalances
+    GetTradeHistory 
+    GetOrder
+    GetOrders
+    SubmitOrder
+    Public methods
+
+Available public methods:
+    GetCurrency
+    GetCurrencies
+    GetTicker
+    GetMarketSummary
+    GetMarketSummaries
+    GetOrderBook
+
+TradeSatoshi's API documentation    :   https://tradesatoshi.com/Home/Api/
+Source code                         :   https://github.com/ollijonsson/tradesatoshiapi/
